@@ -11483,7 +11483,8 @@ font-family: 'Ranchers', cursive; */
 header {
   background-image: url("../images/cacti2.png");
   background-size: cover;
-  color: #75e67d;
+  -webkit-text-stroke: 3px #3b799c;
+  color: #6d2b45;
   font-family: "Ranchers", cursive;
   font-size: 2em;
 }
@@ -11492,7 +11493,8 @@ header {
 }
 
 .nav-link {
-  color: #5bb361;
+  -webkit-text-stroke: 2px #6d2b45;
+  color: #3b799c;
 }
 
 main {
