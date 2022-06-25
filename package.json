@@ -20,6 +20,7 @@
   "homepage": "https://github.com/Tbro4/plant-people#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "bootstrap": "^5.1.3",
     "connect-session-sequelize": "^7.1.4",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
@@ -27,6 +28,8 @@
     "express-session": "^1.17.3",
     "handlebars": "^4.7.7",
     "mysql2": "^2.3.3",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^9.1.0",
     "sequelize": "^6.21.0"
   },
   "devDependencies": {
