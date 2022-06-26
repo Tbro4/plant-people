@@ -11521,7 +11521,15 @@ body {
 
 #welcome,
 #signup,
-#login,
+#login {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 10;
+  background-color: #3b799c;
+  color: #091c30;
+}
+
 #members {
   position: fixed;
   left: 50%;
