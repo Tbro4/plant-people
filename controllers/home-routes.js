@@ -30,13 +30,28 @@ router.get("/signup", async (req, res) => {
 });
 
 //load members page
+
 router.get("/members", async (req, res) => {
-  try {
-    res.render("members");
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
+  const userData = await User.findAll().catch((err) => {
+    res.json(err);
+  });
+  const users = userData.map((user) => user.get({ plain: true }));
+  res.render("members", { users });
 });
+// router.get("/members", async (req, res) => {
+//   try {
+//     const membersData = await User.findAll().catch((err) => {
+//       res.json(err);
+//     });
+
+//     const members = membersData.map((member) => {
+//       member.get({ plain: true });
+//     });
+//     res.render("members", { members });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 module.exports = router;

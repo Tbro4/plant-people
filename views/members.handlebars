@@ -1,3 +1,26 @@
-<div class="text-center">
+<div
+  class="container text-center col-10 border border-primary border-3 p-3 rounded"
+  id="members"
+>
   <h2>Members</h2>
+  <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+
+    {{#each users as |user|}}
+      <div class="col">
+        <div class="card">
+          <img
+            src="/images/yousef-espanioly-AWYI4-h3VnM-unsplash.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{username}}</h5>
+            <p class="card-text">Fun fact about user.</p>
+            <a href="#" class="btn btn-primary">See plants!</a>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+
+  </div>
 </div>
