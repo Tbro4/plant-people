@@ -11530,7 +11530,8 @@ body {
   color: #091c30;
 }
 
-#members {
+#members,
+#member {
   position: fixed;
   left: 50%;
   transform: translate(-50%, 0);

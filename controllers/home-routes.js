@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../models");
+const { User, Picture } = require("../models");
 
 //load homepage with login/signup buttons
 router.get("/", async (req, res) => {
@@ -38,20 +38,25 @@ router.get("/members", async (req, res) => {
   const users = userData.map((user) => user.get({ plain: true }));
   res.render("members", { users });
 });
-// router.get("/members", async (req, res) => {
-//   try {
-//     const membersData = await User.findAll().catch((err) => {
-//       res.json(err);
-//     });
 
-//     const members = membersData.map((member) => {
-//       member.get({ plain: true });
-//     });
-//     res.render("members", { members });
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
+//load one member
+
+router.get("/members/:id", async (req, res) => {
+  try {
+    const dbMemberData = await User.findByPk(req.params.id, {
+      include: [
+        {
+          model: Picture,
+          attributes: ["id", "title", "description", "filename", "user_id"],
+        },
+      ],
+    });
+    const member = dbMemberData.get({ plain: true });
+    res.render("member", { member });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;

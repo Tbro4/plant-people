@@ -1,0 +1,22 @@
+<div
+  class="container text-center col-10 border border-primary border-3 p-3 rounded"
+  id="member"
+>
+  <h2>{{member.username}}'s plants!</h2>
+  <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+
+    {{#each member.pictures as |picture|}}
+      <div class="col">
+        <div class="card">
+          <img src="/images/{{filename}}" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">{{title}}</h5>
+            <p class="card-text">{{description}}</p>
+
+          </div>
+        </div>
+      </div>
+    {{/each}}
+
+  </div>
+</div>
