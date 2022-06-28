@@ -11,14 +11,16 @@ Picture.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    // title: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    // },
-    // description: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    // },
+    title: {
+      type: DataTypes.STRING,
+      // defaultValue: "TITLE",
+      allowNull: false,
+    },
+    description: {
+      type: DataTypes.STRING,
+      // defaultValue: "DESCRIPTION",
+      allowNull: false,
+    },
     filename: {
       type: DataTypes.STRING,
       allowNull: false,
