@@ -59,10 +59,13 @@ router.get("/members/:id", async (req, res) => {
   }
 });
 
-//load upload page
-router.get("/upload", async (req, res) => {
+//load upload page with member id
+router.get("/members/upload/:id", async (req, res) => {
   try {
-    res.render("upload");
+    const dbMemberData = await User.findByPk(req.params.id, {});
+
+    const member = dbMemberData.get({ plain: true });
+    res.render("upload", { member });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -87,7 +90,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 //upload.single(name of the input where you grab the file)
-router.post("/upload", upload.single("image"), async (req, res) => {
+router.post("/upload/:id", upload.single("image"), async (req, res) => {
   try {
     const pictureData = await Picture.create({
       filename: req.file.filename,
