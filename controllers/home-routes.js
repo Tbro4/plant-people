@@ -96,7 +96,7 @@ router.post("/upload/:id", upload.single("image"), async (req, res) => {
       filename: req.file.filename,
       user_id: req.params.id,
     });
-    res.status(200).json(pictureData);
+    res.status(200).redirect(`/members/${req.params.id}`);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
