@@ -11545,6 +11545,17 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
 }
+
+.backBtn {
+  position: absolute;
+  left: 10;
+  top: 6;
+  font-size: x-large;
+}
+
+.back {
+  font-size: medium;
+}
 /* keeps horizontal scroll from happening */
 body {
   overflow-x: hidden;

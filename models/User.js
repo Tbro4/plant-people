@@ -28,6 +28,10 @@ User.init(
         isEmail: true,
       },
     },
+    fact: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,

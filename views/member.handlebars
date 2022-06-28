@@ -3,6 +3,8 @@
   id="member"
 >
   <h2>{{member.username}}'s plants!</h2>
+  <a class="nav-link active backBtn" aria-current="page" href="/members">Members
+    <span class="back">(Back)</span></a>
   <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
 
     {{#each member.pictures as |picture|}}
