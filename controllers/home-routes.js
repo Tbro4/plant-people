@@ -59,4 +59,16 @@ router.get("/members/:id", async (req, res) => {
   }
 });
 
+//load upload page
+router.get("/upload", async (req, res) => {
+  try {
+    res.render("upload");
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+//upload image
+
 module.exports = router;

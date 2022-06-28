@@ -1,0 +1,19 @@
+<div
+  class="container text-center col-4 border border-primary border-3 p-3 rounded"
+  id="upload"
+>
+  <h3 class="mb-4">UPLOAD</h3>
+  <form
+    class="upload-form"
+    action="/uploadSingle"
+    enctype="multipart/form-data"
+    method="post"
+  >
+    <input type="file" name="image" accept="image/*" />
+
+    <input class="btn btn-primary" type="submit" value="Upload" />
+
+  </form>
+</div>
+
+<script src="./js/login.js"></script>
