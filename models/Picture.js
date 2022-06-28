@@ -11,14 +11,14 @@ Picture.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    title: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    description: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+    // title: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
+    // description: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
     filename: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -29,6 +29,7 @@ Picture.init(
         model: "user",
         key: "id",
       },
+      // },
     },
   },
   {

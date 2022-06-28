@@ -47,7 +47,7 @@ router.get("/members/:id", async (req, res) => {
       include: [
         {
           model: Picture,
-          attributes: ["id", "title", "description", "filename", "user_id"],
+          attributes: ["id", "filename"],
         },
       ],
     });
@@ -69,6 +69,35 @@ router.get("/upload", async (req, res) => {
   }
 });
 
+// load upload page
+
 //upload image
+const multer = require("multer");
+const path = require("path");
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, path.join(__dirname + "../../public/uploadImages"));
+  },
+  //file is the actual file
+  filename: (req, file, cb) => {
+    console.log(file);
+    cb(null, Date.now() + path.extname(file.originalname));
+  },
+});
+
+const upload = multer({ storage: storage });
+//upload.single(name of the input where you grab the file)
+router.post("/upload", upload.single("image"), async (req, res) => {
+  try {
+    const pictureData = await Picture.create({
+      filename: req.file.filename,
+      user_id: req.params.id,
+    });
+    res.status(200).json(pictureData);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
