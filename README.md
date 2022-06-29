@@ -2,6 +2,8 @@
 
 Sign up to add pictures of plants to your profile and view other members' plants.
 
+[Heroku-deployed app HERE](https://agile-escarpment-36567.herokuapp.com/)
+
 ## Description
 
 A simple applicaton to upload pictures of plants that include a title and description to be displayed in card-format on your member profile. User is presented with a login/signup page as the homepage. Either of those actions takes you to the members page with cards of each member, including a picture, their username, and a "fun fact".
@@ -33,6 +35,8 @@ Tyler Brooks
 [Thetylerbrooks@gmail.com](mailto:Thetylerbrooks@gmail.com)
 
 ## Future addidtions
+
+Add delete feature for Images and Profiles
 
 User should only be allowed to add pictures to the profile that they are singed in as.
 
